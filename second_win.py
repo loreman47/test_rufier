@@ -64,7 +64,6 @@ class TestWin(QWidget):
         self.hide()
         self.exp = Experimental(int(self.line_age.text()),int(self.line_test1.text()), int(self.line_test2.text()),int(self.line_test3.text()))
         self.fw = FinalWin(self.exp)
-
     def timer_test(self):
         global time
         time = QTime(0,0,15)
@@ -96,7 +95,7 @@ class TestWin(QWidget):
             self.timer.stop()
 
     def timer2Event(self):
-        global timetime 
+        global time 
         time = time.addSecs(-1)
         self.text_timer.setText(time.toString("hh:mm:ss"))
         self.text_timer.setFont(QFont("Times",36,QFont.Bold))
@@ -104,7 +103,7 @@ class TestWin(QWidget):
             self.timer.stop()
 
     def timer3Event(self):
-        global timetime 
+        global time
         time = time.addSecs(-1)
         self.text_timer.setText(time.toString("hh:mm:ss"))
         if int(time.toString("hh:mm:ss")[6-8]) >= 45:
